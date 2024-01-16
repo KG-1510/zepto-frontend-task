@@ -21,20 +21,17 @@ Crafted with <span style="color: #8b0000;">&hearts;</span> by Kushagra Gupta
 
 ## 👨‍💻 Features
 
-:white_check_mark: Users can get data of any of the predefined SQL queries either by using SQL Editor or Sidebar Menu.\
-:white_check_mark: Users can sort data directly by clicking the Table Headers title.\
-:white_check_mark: Users can search for a particular data among many records using the search bar.\
-:white_check_mark: Users can download the output window table as CSV, with just a single click.
+:white_check_mark: Users can search for any user by their name or email ID.\
+:white_check_mark: Users can remove the selected users by clicking the X icon.\
+:white_check_mark: Users can use the backspace button to delete the last selected user.\
+:white_check_mark: Users can use up or down arrow key and press Enter to select user from dropdown.
 
 ## ⚙️ NPM Modules Used
 
-- `"react-ace": "^10.1.0",` - To make the code editor
-- `"react-csv-to-table": "^0.0.4",` - To show the output as a simple CSV table
 - `"react-dom": "^18.2.0",` - To interact with React's virtual DOM
-- `"react-icons": "^4.4.0",` - To have an icon library
+- `"react-icons": "^5.0.1",` - To have an icon library
 - `"react-router-dom": "^6.3.0",` - To implement routing features provided by React.js
-- `"react-toastify": "^9.0.5",` - To show the toast notifications for a success or error event
-- `"react-csv": "^2.2.2",` - To export the output window table as CSV
+- `"recoil": "^0.7.7",` - To implement state management. Facebook Open Source, fast and performant for small projects.
 
 ## ⏱ Page Load Time
 
@@ -46,11 +43,9 @@ The Webapp loads in about 0.4 s to 0.6s. This is calculated by using Google Ligh
 
 ## 🪜 Steps I took to optimize the page load time
 
-- Used `.webp` assets instead of `.png` or `.jpeg` to minmizing loading time.
-- Used SVG icons wherever possible as they are lighter than image type icons.
 - Used PurgeCSS to tree-shake unused styles and optimize my final build size.
 - Used Lighthouse DevTools Extension to find the performance issues and fix them using their actionable suggestion.
-- Used netlify that has world-class CDN technology that reduces waiting time even further.
+- Used Netlify that has world-class CDN technology that reduces waiting time even further.
 
 ## Available Scripts
 
