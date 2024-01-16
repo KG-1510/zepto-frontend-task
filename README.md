@@ -41,7 +41,8 @@ Crafted with <span style="color: #8b0000;">&hearts;</span> by Kushagra Gupta
 The Webapp loads in about 0.4 s to 0.6s. This is calculated by using Google Lighthouse tool in Chromium based browsers. 
 *NOTE: The Lighthouse Audits scores are decreased because of preinstalled browser extensions that are non-removable in my system.*
 
-<img width="1498" alt="Screenshot 2022-06-25 at 1 39 20 AM" src="https://user-images.githubusercontent.com/60519359/175661159-8def9c6c-c769-4f6b-918b-0ff2e935793a.png">
+<img width="1440" alt="Screenshot 2024-01-16 at 6 29 03 PM" src="https://github.com/KG-1510/zepto-frontend-task/assets/60519359/b264e6f0-d93b-4f28-8ec7-685cf31f643a">
+
 
 ## 🪜 Steps I took to optimize the page load time
 
