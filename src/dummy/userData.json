@@ -1,0 +1,64 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "image": "https://randomuser.me/api/portraits/men/66.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "image": "https://randomuser.me/api/portraits/men/67.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Bob Jackson",
+      "email": "bob.jackson@example.com",
+      "image": "https://randomuser.me/api/portraits/men/68.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "image": "https://randomuser.me/api/portraits/women/30.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Mark Williams",
+      "email": "mark.williams@example.com",
+      "image": "https://randomuser.me/api/portraits/men/69.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Emily Davis",
+      "email": "emily.davis@example.com",
+      "image": "https://randomuser.me/api/portraits/women/70.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Samuel Brown",
+      "email": "samuel.brown@example.com",
+      "image": "https://randomuser.me/api/portraits/men/71.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Sophia Miller",
+      "email": "sophia.miller@example.com",
+      "image": "https://randomuser.me/api/portraits/women/10.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Matthew Taylor",
+      "email": "matthew.taylor@example.com",
+      "image": "https://randomuser.me/api/portraits/men/73.jpg"
+    },
+    {
+      "id": 10,
+      "name": "Olivia Wilson",
+      "email": "olivia.wilson@example.com",
+      "image": "https://randomuser.me/api/portraits/women/12.jpg"
+    }
+  ]
+}
