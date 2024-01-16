@@ -47,10 +47,12 @@ const PickUsers: React.FC<Props> = ({ data, inputData, setInputData }) => {
     }
     if (e.key === 'Enter') {
       const foundUser = data[highlightedUserCount];
-      setSelectedUsers([...selectedUsers, foundUser] as IUserData[]);
-      setAllUsersData(allUsersData.filter((item) => item.id !== foundUser.id));
-      setInputData('');
-      setHighlightedUserCount(-1);
+      if (foundUser) {
+        setSelectedUsers([...selectedUsers, foundUser] as IUserData[]);
+        setAllUsersData(allUsersData.filter((item) => item.id !== foundUser.id));
+        setInputData('');
+        setHighlightedUserCount(-1);
+      }
     }
   };
 
