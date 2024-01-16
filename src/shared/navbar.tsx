@@ -12,12 +12,8 @@ const Navbar: React.FC = () => {
             alt="zepto-logo"
           />
           <div className="flex flex-col">
-            <h1 className="font-bold text-sm md:text-2xl px-2 w-full">
-              Zepto Frontend Assignment 
-            </h1>
-            <h2 className="font-semibold text-sm md:text-lg px-2">
-              Pick Users
-            </h2>
+            <h1 className="font-bold text-sm md:text-2xl px-2 w-full">Zepto Frontend Assignment</h1>
+            <h2 className="font-semibold text-sm md:text-lg px-2">Pick Users</h2>
           </div>
         </div>
         <div className="flex flex-shrink-0 items-center ml-auto">
@@ -35,6 +31,6 @@ const Navbar: React.FC = () => {
       </header>
     </div>
   );
-}
+};
 
 export default Navbar;

@@ -1,9 +1,10 @@
-import { useRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState } from 'recoil';
 import { selectedUserDataAtom, userDataAtom } from '../../recoil/atom/users';
 import UserPill from './userPill';
 import { IUserData } from '../../utils/interfaces';
 import { useRef, useState } from 'react';
 import { UserDropdownComponent } from '.';
+import { findUserById } from '../../utils/utils';
 
 type Props = {
   inputData: string;
@@ -15,7 +16,7 @@ const PickUsers: React.FC<Props> = ({ data, inputData, setInputData }) => {
   const [isHighlightedPill, setIsHighlightedPill] = useState<boolean>(false);
   const [highlightedUserCount, setHighlightedUserCount] = useState<number>(-1);
   const [selectedUsers, setSelectedUsers] = useRecoilState<IUserData[]>(selectedUserDataAtom);
-  const allUsersData = useRecoilValue<IUserData[]>(userDataAtom);
+  const [allUsersData, setAllUsersData] = useRecoilState<IUserData[]>(userDataAtom);
   const inputElementRef = useRef<HTMLInputElement>(null);
 
   const handleUserInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -23,12 +24,14 @@ const PickUsers: React.FC<Props> = ({ data, inputData, setInputData }) => {
   };
 
   const handleInputNav = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (!isHighlightedPill) {
+    if (!isHighlightedPill && e.key !== 'ArrowDown' && e.key !== 'ArrowUp') {
       setIsHighlightedPill(true);
     }
-    if (isHighlightedPill && e.key === 'Backspace') {
+    if (isHighlightedPill && e.key === 'Backspace' && selectedUsers.length > 0) {
       setSelectedUsers(selectedUsers.slice(0, -1));
       setIsHighlightedPill(false);
+      const foundUser = findUserById(selectedUsers, selectedUsers[selectedUsers.length - 1].id);
+      setAllUsersData([...allUsersData, foundUser] as IUserData[]);
     }
     if (e.key === 'ArrowDown') {
       setHighlightedUserCount(highlightedUserCount + 1);
@@ -40,6 +43,13 @@ const PickUsers: React.FC<Props> = ({ data, inputData, setInputData }) => {
       setHighlightedUserCount(highlightedUserCount - 1);
     }
     if (e.key === 'ArrowUp' && highlightedUserCount < -1) {
+      setHighlightedUserCount(-1);
+    }
+    if (e.key === 'Enter') {
+      const foundUser = allUsersData[highlightedUserCount];
+      setSelectedUsers([...selectedUsers, foundUser] as IUserData[]);
+      setAllUsersData(allUsersData.filter((item) => item.id !== foundUser.id));
+      setInputData('');
       setHighlightedUserCount(-1);
     }
   };

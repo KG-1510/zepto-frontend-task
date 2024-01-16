@@ -13,7 +13,14 @@ type Props = {
   isLastPill: boolean;
 };
 
-const UserPill: React.FC<Props> = ({ id, name, image, isHighlightedPill, setIsHighlightedPill, isLastPill }) => {
+const UserPill: React.FC<Props> = ({
+  id,
+  name,
+  image,
+  isHighlightedPill,
+  setIsHighlightedPill,
+  isLastPill,
+}) => {
   const [allUsersData, setAllUsersData] = useRecoilState<IUserData[]>(userDataAtom);
   const [selectedUsers, setSelectedUsers] = useRecoilState<IUserData[]>(selectedUserDataAtom);
 

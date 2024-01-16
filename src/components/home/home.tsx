@@ -23,7 +23,11 @@ const HomeComponent: React.FC = () => {
     <>
       <Navbar />
       <div className="w-full flex flex-col items-center justify-center p-2 md:p-10">
-        <PickUsersComponent data={inputData.length !== 0 ? searchResults : allUsersData} inputData={inputData} setInputData={setInputData} />
+        <PickUsersComponent
+          data={inputData.length !== 0 ? searchResults : allUsersData}
+          inputData={inputData}
+          setInputData={setInputData}
+        />
       </div>
       <Footer />
     </>

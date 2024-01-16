@@ -2,7 +2,7 @@ const Footer: React.FC = () => {
   return (
     <div className="absolute bottom-0 left-0 w-full py-4 border-t-2 mt-36 bg-white">
       <p className="text-center">
-        Made with ❤️ {' '} and ☕️ {' '} by {' '}
+        Made with ❤️ and ☕️ by{' '}
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -14,6 +14,6 @@ const Footer: React.FC = () => {
       </p>
     </div>
   );
-}
+};
 
 export default Footer;
