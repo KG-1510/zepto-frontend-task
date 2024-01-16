@@ -46,7 +46,7 @@ const PickUsers: React.FC<Props> = ({ data, inputData, setInputData }) => {
       setHighlightedUserCount(-1);
     }
     if (e.key === 'Enter') {
-      const foundUser = allUsersData[highlightedUserCount];
+      const foundUser = data[highlightedUserCount];
       setSelectedUsers([...selectedUsers, foundUser] as IUserData[]);
       setAllUsersData(allUsersData.filter((item) => item.id !== foundUser.id));
       setInputData('');
@@ -61,49 +61,47 @@ const PickUsers: React.FC<Props> = ({ data, inputData, setInputData }) => {
   };
 
   return (
-    <>
-      <div
-        onClick={handleInputFocus}
-        className="w-full h-full flex flex-wrap md:w-3/4 p-2 border-b-2 border-blue-300 cursor-text"
-      >
-        {selectedUsers.map((user: IUserData, index: number) => {
-          return (
-            <>
-              <UserPill
-                key={user.id}
-                id={user.id}
-                name={user.name}
-                image={user.image}
-                isHighlightedPill={isHighlightedPill}
-                setIsHighlightedPill={setIsHighlightedPill}
-                isLastPill={selectedUsers.length - 1 === index}
-              />
-            </>
-          );
-        })}
-
-        <div className="relative mt-3 w-full md:w-2/5">
-          <input
-            ref={inputElementRef}
-            className="w-full p-2 focus:outline-none"
-            type="text"
-            placeholder="Add new user..."
-            autoFocus={true}
-            onKeyUp={(e) => handleInputNav(e)}
-            onChange={(e) => handleUserInput(e)}
-            value={inputData}
+    <div
+      onClick={handleInputFocus}
+      role="button"
+      tabIndex={0}
+      className="w-full h-full flex flex-wrap md:w-3/4 p-2 border-b-2 border-blue-300 cursor-text"
+    >
+      {selectedUsers.map((user: IUserData, index: number) => {
+        return (
+          <UserPill
+            key={user.id}
+            id={user.id}
+            name={user.name}
+            image={user.image}
+            isHighlightedPill={isHighlightedPill}
+            setIsHighlightedPill={setIsHighlightedPill}
+            isLastPill={selectedUsers.length - 1 === index}
           />
-          <div className="w-full absolute top-14">
-            <UserDropdownComponent
-              data={data}
-              setInputData={setInputData}
-              highlightedUserCount={highlightedUserCount}
-              setHighlightedUserCount={setHighlightedUserCount}
-            />
-          </div>
+        );
+      })}
+
+      <div className="relative mt-3 w-full md:w-2/5">
+        <input
+          ref={inputElementRef}
+          className="w-full p-2 focus:outline-none"
+          type="text"
+          placeholder="Add new user..."
+          autoFocus={true}
+          onKeyUp={(e) => handleInputNav(e)}
+          onChange={(e) => handleUserInput(e)}
+          value={inputData}
+        />
+        <div className="w-full absolute top-14">
+          <UserDropdownComponent
+            data={data}
+            setInputData={setInputData}
+            highlightedUserCount={highlightedUserCount}
+            setHighlightedUserCount={setHighlightedUserCount}
+          />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
