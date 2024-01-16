@@ -36,8 +36,8 @@ const PickUsers: React.FC<Props> = ({ data, inputData, setInputData }) => {
     if (e.key === 'ArrowDown') {
       setHighlightedUserCount(highlightedUserCount + 1);
     }
-    if (e.key === 'ArrowUp' && highlightedUserCount > allUsersData.length) {
-      setHighlightedUserCount(-1);
+    if (e.key === 'ArrowDown' && highlightedUserCount === data.length) {
+      setHighlightedUserCount(data.length - 1);
     }
     if (e.key === 'ArrowUp') {
       setHighlightedUserCount(highlightedUserCount - 1);
