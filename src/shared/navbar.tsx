@@ -5,12 +5,12 @@ const Navbar: React.FC = () => {
     <div className="w-full flex-grow text-gray-800">
       <header className="flex items-center h-20 px-6 sm:px-10 bg-white shadow-lg w-full">
         <div className="flex flex-row items-center w-full max-w-md">
-          {/* <img
+          <img
             className="rounded-md"
             width={60}
             src="https://thehardcopy.co/wp-content/uploads/Zepto-Featured-Image-Option-2.png"
             alt="zepto-logo"
-          /> */}
+          />
           <div className="flex flex-col">
             <h1 className="font-bold text-sm md:text-2xl px-2 w-full">
               Zepto Frontend Assignment 
